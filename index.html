@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User API Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h2>⚡ API Explorer</h2>
+    <span>Developer Toolkit</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="tag">REST API PLAYGROUND</p>
+      <h1>User API Explorer</h1>
+      <p>Explore, fetch and understand user data through a REST API.</p>
+    </section>
+
+    <section class="request">
+      <div class="method">GET</div>
+      <input id="endpoint"
+        value="https://jsonplaceholder.typicode.com/users">
+      <button id="fetchBtn" onclick="getUsers()">Send Request ↗</button>
+    </section>
+
+    <p id="status">Ready to send your first API request.</p>
+
+    <section class="content">
+      <div class="users-panel">
+        <div class="panel-title">
+          <h3>Users</h3>
+          <input id="search" placeholder="Search users..."
+            oninput="searchUsers()">
+        </div>
+        <div id="usersList"></div>
+      </div>
+
+      <div class="response-panel">
+        <h3>JSON Response</h3>
+        <pre id="response">Your API response will appear here.</pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Built with HTML, CSS & JavaScript | User API Explorer
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
