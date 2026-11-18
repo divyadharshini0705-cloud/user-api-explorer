@@ -4,39 +4,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User API Explorer</title>
+  <title>User API Explorer | QA Edition</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <h2>⚡ API Explorer</h2>
-    <span>Developer Toolkit</span>
+    <span>QA Testing Toolkit</span>
   </header>
 
   <main>
     <section class="hero">
-      <p class="tag">REST API PLAYGROUND</p>
+      <p class="tag">REST API TESTING PLAYGROUND</p>
       <h1>User API Explorer</h1>
-      <p>Explore, fetch and understand user data through a REST API.</p>
+      <p>Explore API responses, validate data and execute automated test cases.</p>
     </section>
 
+    <!-- API REQUEST -->
     <section class="request">
       <div class="method">GET</div>
+
       <input id="endpoint"
         value="https://jsonplaceholder.typicode.com/users">
-      <button id="fetchBtn" onclick="getUsers()">Send Request ↗</button>
+
+      <button id="fetchBtn" onclick="getUsers()">
+        Send Request ↗
+      </button>
     </section>
 
-    <p id="status">Ready to send your first API request.</p>
+    <p id="status">Ready to send your API request.</p>
 
+    <!-- TEST DASHBOARD -->
+    <section class="dashboard">
+      <div class="stat-card">
+        <span>Total Tests</span>
+        <h2 id="totalTests">0</h2>
+      </div>
+
+      <div class="stat-card">
+        <span>Passed</span>
+        <h2 class="pass-text" id="passedTests">0</h2>
+      </div>
+
+      <div class="stat-card">
+        <span>Failed</span>
+        <h2 class="fail-text" id="failedTests">0</h2>
+      </div>
+
+      <div class="stat-card">
+        <span>Response Time</span>
+        <h2 id="responseTime">--</h2>
+      </div>
+    </section>
+
+    <!-- TEST RUNNER -->
+    <section class="test-panel">
+      <div class="panel-heading">
+        <div>
+          <h3>API Test Runner</h3>
+          <p>Execute automated validation checks</p>
+        </div>
+
+        <button id="testBtn" onclick="runTests()">
+          Run All Tests ▶
+        </button>
+      </div>
+
+      <div id="testResults">
+        <p class="empty">No tests executed yet. Click Run All Tests.</p>
+      </div>
+    </section>
+
+    <!-- USERS AND RESPONSE -->
     <section class="content">
+
       <div class="users-panel">
         <div class="panel-title">
           <h3>Users</h3>
-          <input id="search" placeholder="Search users..."
+
+          <input id="search"
+            placeholder="Search users..."
             oninput="searchUsers()">
         </div>
+
         <div id="usersList"></div>
       </div>
 
@@ -44,13 +95,19 @@
         <h3>JSON Response</h3>
         <pre id="response">Your API response will appear here.</pre>
       </div>
+
     </section>
+
   </main>
 
   <footer>
-    Built with HTML, CSS & JavaScript | User API Explorer
+    Built with HTML, CSS, JavaScript & REST API
+    <br>
+    User API Explorer | QA Portfolio Project
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>
+
